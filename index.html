@@ -9,150 +9,52 @@
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="theme-color" content="#F2F2F7">
     <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/3652/3652191.png">
-    
-    <title>Chấm Công Pro - Bản Âm Thanh iOS</title>
-    
+    <title>Chấm Công Pro - Bản Hoàn Mỹ</title>
     <style>
-        :root {
-            --primary: #bc002d;
-            --secondary: #007AFF;
-            --success: #34C759;
-            --bg: #F2F2F7;
-            --card-bg: #FFFFFF;
-            --border: #C6C6C8;
-            --text-main: #1C1C1E;
-            --text-sub: #8E8E93;
-            --box-bg: #F9F9F9;
-        }
-
-        * { 
-            box-sizing: border-box; 
-            margin: 0; 
-            padding: 0;
-            -webkit-appearance: none; 
-            -webkit-tap-highlight-color: transparent;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background-color: var(--bg);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px 0 40px 0;
-            color: var(--text-main);
-        }
-
+        :root { --primary: #bc002d; --secondary: #007AFF; --success: #34C759; --bg: #F2F2F7; --card-bg: #FFFFFF; --border: #C6C6C8; --text-main: #1C1C1E; --text-sub: #8E8E93; --box-bg: #F9F9F9; }
+        * { box-sizing: border-box; margin: 0; padding: 0; -webkit-appearance: none; -webkit-tap-highlight-color: transparent; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background-color: var(--bg); display: flex; flex-direction: column; align-items: center; padding: 20px 0 40px 0; color: var(--text-main); }
         .container { width: 90%; max-width: 400px; margin-bottom: 30px; }
-
-        .total-banner {
-            background: var(--card-bg);
-            padding: 24px 0;
-            border-radius: 20px;
-            text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            width: 100%;
-            margin-bottom: 16px;
-        }
+        .total-banner { background: var(--card-bg); padding: 24px 0; border-radius: 20px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05); width: 100%; margin-bottom: 16px; }
         .total-banner span { font-size: 0.75rem; color: var(--text-sub); font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; }
         .total-amount { font-size: 2.5rem; font-weight: 800; color: var(--success); margin-top: 5px; }
-
-        .card {
-            background: var(--card-bg);
-            border-radius: 20px;
-            padding: 20px;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-        }
-
+        .card { background: var(--card-bg); border-radius: 20px; padding: 20px; width: 100%; display: flex; flex-direction: column; gap: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); }
         .input-group { width: 100%; }
-        .label-style { 
-            font-size: 0.65rem; color: var(--text-sub); font-weight: 700; 
-            text-transform: uppercase; margin-bottom: 6px; display: block; padding-left: 4px; 
-        }
-
-        .perfect-box {
-            width: 100%;
-            height: 50px;
-            background-color: var(--box-bg);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--text-main);
-            text-align: center;
-            outline: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            font-family: inherit;
-        }
+        .label-style { font-size: 0.65rem; color: var(--text-sub); font-weight: 700; text-transform: uppercase; margin-bottom: 6px; display: block; padding-left: 4px; }
+        .perfect-box { width: 100%; height: 50px; background-color: var(--box-bg); border: 1px solid var(--border); border-radius: 12px; font-size: 1rem; font-weight: 600; color: var(--text-main); text-align: center; outline: none; display: flex; align-items: center; justify-content: center; overflow: hidden; font-family: inherit; }
         .perfect-box:focus-within, .perfect-box:focus { border-color: var(--secondary); background-color: #fff; }
-
         select.perfect-box { cursor: pointer; color: var(--secondary); padding: 0 10px; text-align-last: center; }
         input[type="date"].perfect-box { padding: 0 10px; }
-
         .time-wrapper { display: flex; width: 100%; height: 100%; align-items: center; }
         .time-half { flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; }
         .time-half input { border: none; background: transparent; font-size: 1.1rem; font-weight: 600; color: var(--secondary); text-align: center; width: 100%; outline: none; }
         .time-half span { font-size: 0.55rem; color: var(--text-sub); font-weight: 700; margin-bottom: 2px; }
         .divider { width: 1px; height: 30px; background-color: var(--border); }
-
         .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; width: 100%; }
-
         .btn { width: 100%; height: 50px; border-radius: 12px; font-size: 1rem; font-weight: 700; border: none; cursor: pointer; text-transform: uppercase; transition: 0.2s; }
         .btn:active { transform: scale(0.98); }
         .btn-save { background: var(--primary); color: white; margin-top: 5px; box-shadow: 0 4px 10px rgba(188, 0, 45, 0.2); }
         .btn-update { background: var(--secondary); color: white; margin-top: 5px; box-shadow: 0 4px 10px rgba(0, 122, 255, 0.2); }
-        
         .action-group { display: none; gap: 10px; margin-top: 10px; width: 100%; }
         .btn-del { background: #FF3B30; color: white; flex: 1; }
         .btn-cancel { background: #E5E5EA; color: var(--text-main); flex: 1; }
-
         .tabs { display: flex; width: 100%; background: #E5E5EA; padding: 4px; border-radius: 14px; margin-top: 20px; }
         .tab { flex: 1; padding: 10px; text-align: center; border-radius: 10px; font-size: 0.85rem; font-weight: 700; color: var(--text-sub); cursor: pointer; transition: 0.2s; }
         .tab.active { background: white; color: var(--text-main); box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-
         .view-section { width: 100%; margin-top: 15px; display: none; }
         .view-section.active { display: block; }
-
         .calendar-card { background: white; border-radius: 20px; padding: 15px; box-shadow: 0 2px 10px rgba(0,0,0,0.02); }
         .cal-header { text-align: center; font-weight: 800; color: var(--primary); margin-bottom: 15px; font-size: 1rem; text-transform: uppercase; }
         .calendar-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; }
         .day-name { text-align: center; font-size: 0.65rem; font-weight: 800; color: var(--text-sub); padding-bottom: 5px; }
-        
-        .cell {
-            aspect-ratio: 1; 
-            border-radius: 10px; 
-            display: flex; 
-            flex-direction: column;
-            align-items: center; 
-            justify-content: center; 
-            background: var(--box-bg); 
-            cursor: pointer; 
-            padding: 2px;
-            box-sizing: border-box;
-            border: 1px solid transparent;
-            transition: all 0.2s;
-        }
+        .cell { aspect-ratio: 1; border-radius: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; background: var(--box-bg); cursor: pointer; padding: 2px; box-sizing: border-box; border: 1px solid transparent; transition: all 0.2s; }
         .cell.has-data { background: #E8F5E9; border-color: #C8E6C9; }
         .cell.today { border: 2px solid var(--secondary); background: #eff6ff; }
-        .cell.selected { 
-            border: 2px solid var(--primary) !important; 
-            box-shadow: 0 0 8px rgba(188, 0, 45, 0.3); 
-            transform: scale(1.05); 
-            z-index: 10;
-        }
-
+        .cell.selected { border: 2px solid var(--primary) !important; box-shadow: 0 0 8px rgba(188, 0, 45, 0.3); transform: scale(1.05); z-index: 10; }
         .cell-top { display: flex; align-items: center; justify-content: center; gap: 3px; margin-bottom: 2px; }
         .cell-date { font-size: 0.85rem; font-weight: 700; color: var(--text-main); line-height: 1; }
         .cell-icon { font-size: 0.7rem; line-height: 1; }
         .cell-money { font-size: 0.55rem; color: var(--success); font-weight: 800; line-height: 1; }
-
         .list-card { background: white; border-radius: 20px; padding: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.02); }
         table { width: 100%; border-collapse: collapse; }
         th { font-size: 0.7rem; color: var(--text-sub); padding: 12px 2px; border-bottom: 1px solid var(--border); text-transform: uppercase; }
@@ -160,566 +62,236 @@
         tr:last-child td { border-bottom: none; }
         .td-money { color: var(--success); font-weight: 800; }
         .btn-edit-small { color: var(--secondary); border: 1px solid var(--secondary); background: #eff6ff; padding: 6px 10px; border-radius: 8px; font-weight: 700; font-size: 0.75rem; cursor: pointer; }
-
         .btn-backup { background: #E5E5EA; color: var(--text-main); font-size: 0.8rem; height: 45px; box-shadow: none; margin-top: 0; }
         .btn-restore { background: var(--success); color: white; font-size: 0.8rem; height: 45px; box-shadow: 0 2px 8px rgba(52, 199, 89, 0.2); margin-top: 0;}
-
-        /* BANNER CHÚC MỪNG & CẢNH BÁO */
-        .modal-overlay {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.6); backdrop-filter: blur(4px);
-            display: none; align-items: center; justify-content: center; z-index: 9999;
-            opacity: 0; transition: opacity 0.3s ease;
-        }
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); backdrop-filter: blur(4px); display: none; align-items: center; justify-content: center; z-index: 9999; opacity: 0; transition: opacity 0.3s ease; }
         .modal-overlay.active { display: flex; opacity: 1; }
-        
-        .modal-box {
-            background: white; width: 85%; max-width: 340px; border-radius: 24px;
-            padding: 30px 20px; text-align: center; box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-            transform: scale(0.8); transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
+        .modal-box { background: white; width: 85%; max-width: 340px; border-radius: 24px; padding: 30px 20px; text-align: center; box-shadow: 0 20px 40px rgba(0,0,0,0.2); transform: scale(0.8); transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
         .modal-overlay.active .modal-box { transform: scale(1); }
-
         .modal-icon-top { font-size: 3.5rem; margin-bottom: 10px; line-height: 1; }
         .modal-title { font-size: 1.1rem; font-weight: 800; color: var(--text-main); margin-bottom: 5px; text-transform: uppercase; letter-spacing: 0.5px; }
         .modal-message { font-size: 1.8rem; font-weight: 800; color: var(--success); margin-bottom: 25px; display: block; }
-        
-        .btn-claim {
-            background: linear-gradient(135deg, #34C759 0%, #28A745 100%); color: white;
-            border: none; width: 100%; padding: 16px; border-radius: 16px; font-size: 1.1rem;
-            font-weight: 800; cursor: pointer; box-shadow: 0 8px 20px rgba(52, 199, 89, 0.3);
-            text-transform: uppercase; transition: transform 0.1s; letter-spacing: 1px;
-        }
+        .btn-claim { background: linear-gradient(135deg, #34C759 0%, #28A745 100%); color: white; border: none; width: 100%; padding: 16px; border-radius: 16px; font-size: 1.1rem; font-weight: 800; cursor: pointer; box-shadow: 0 8px 20px rgba(52, 199, 89, 0.3); text-transform: uppercase; transition: transform 0.1s; letter-spacing: 1px; }
         .btn-claim:active { transform: scale(0.95); }
     </style>
 </head>
 <body>
-
     <div class="container">
         <div class="total-banner">
             <span>THU NHẬP DỰ KIẾN THÁNG NÀY</span>
             <div class="total-amount" id="totalVal">¥0</div>
         </div>
-
         <div class="card">
-            <div class="input-group">
-                <label class="label-style">NGÀY LÀM VIỆC</label>
-                <input type="date" id="workDate" class="perfect-box">
-            </div>
-
+            <div class="input-group"><label class="label-style">NGÀY LÀM VIỆC</label><input type="date" id="workDate" class="perfect-box"></div>
             <div class="input-group">
                 <div class="perfect-box">
                     <div class="time-wrapper">
-                        <div class="time-half">
-                            <span>VÀO</span>
-                            <input type="time" id="startTime" value="08:00">
-                        </div>
+                        <div class="time-half"><span>VÀO</span><input type="time" id="startTime" value="08:00"></div>
                         <div class="divider"></div>
-                        <div class="time-half">
-                            <span>RA</span>
-                            <input type="time" id="endTime" value="17:00">
-                        </div>
+                        <div class="time-half"><span>RA</span><input type="time" id="endTime" value="17:00"></div>
                     </div>
                 </div>
             </div>
-
             <div class="grid-2">
-                <div class="input-group">
-                    <label class="label-style">NƠI LÀM VIỆC</label>
-                    <select id="factorySelect" class="perfect-box" onchange="applyFactory()">
-                        <option value="kimchi">🥬 Xưởng Kim Chi</option>
-                        <option value="thit">🥩 Xưởng Thịt</option>
-                        <option value="custom">📝 Tùy Chỉnh</option>
-                    </select>
-                </div>
-                <div class="input-group">
-                    <label class="label-style">LƯƠNG / GIỜ (¥)</label>
-                    <input type="number" id="hourlyRate" value="1177" class="perfect-box">
-                </div>
+                <div class="input-group"><label class="label-style">NƠI LÀM VIỆC</label><select id="factorySelect" class="perfect-box" onchange="applyFactory()"><option value="kimchi">🥬 Xưởng Kim Chi</option><option value="thit">🥩 Xưởng Thịt</option><option value="custom">📝 Tùy Chỉnh</option></select></div>
+                <div class="input-group"><label class="label-style">LƯƠNG / GIỜ (¥)</label><input type="number" id="hourlyRate" value="1177" class="perfect-box"></div>
             </div>
-
             <div class="grid-2">
-                <div class="input-group">
-                    <label class="label-style">NGHỈ (PHÚT)</label>
-                    <input type="number" id="breakTime" value="60" class="perfect-box">
-                </div>
-                <div class="input-group">
-                    <label class="label-style">TIỀN TÀU (¥)</label>
-                    <input type="number" id="transFee" value="0" class="perfect-box">
-                </div>
+                <div class="input-group"><label class="label-style">NGHỈ (PHÚT)</label><input type="number" id="breakTime" value="60" class="perfect-box"></div>
+                <div class="input-group"><label class="label-style">TIỀN TÀU (¥)</label><input type="number" id="transFee" value="0" class="perfect-box"></div>
             </div>
-
             <button class="btn btn-save" id="btnSave" onclick="saveData()">LƯU DỮ LIỆU</button>
-            
-            <div class="action-group" id="editActions">
-                <button class="btn btn-del" onclick="deleteData()">XÓA BỎ</button>
-                <button class="btn btn-cancel" onclick="resetForm()">HỦY LỆNH</button>
-            </div>
+            <div class="action-group" id="editActions"><button class="btn btn-del" onclick="deleteData()">XÓA BỎ</button><button class="btn btn-cancel" onclick="resetForm()">HỦY LỆNH</button></div>
         </div>
-
-        <div class="tabs">
-            <div class="tab active" id="tabCal" onclick="switchView('cal')">LỊCH 🗓️</div>
-            <div class="tab" id="tabList" onclick="switchView('list')">DANH SÁCH 📜</div>
-        </div>
-
-        <div id="calView" class="view-section active">
-            <div class="calendar-card">
-                <div class="cal-header" id="monthLabel">THÁNG ...</div>
-                <div class="calendar-grid" id="grid"></div>
-            </div>
-        </div>
-
+        <div class="tabs"><div class="tab active" id="tabCal" onclick="switchView('cal')">LỊCH 🗓️</div><div class="tab" id="tabList" onclick="switchView('list')">DANH SÁCH 📜</div></div>
+        <div id="calView" class="view-section active"><div class="calendar-card"><div class="cal-header" id="monthLabel">THÁNG ...</div><div class="calendar-grid" id="grid"></div></div></div>
         <div id="listView" class="view-section">
             <div class="list-card">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Ngày</th>
-                            <th>Giờ</th>
-                            <th>Lương</th>
-                            <th>Thao tác</th>
-                        </tr>
-                    </thead>
-                    <tbody id="listBody"></tbody>
-                </table>
+                <table><thead><tr><th>Ngày</th><th>Giờ</th><th>Lương</th><th>Thao tác</th></tr></thead><tbody id="listBody"></tbody></table>
             </div>
-
-            <div class="card" style="margin-top: 15px; padding: 15px; text-align: center;">
-                <span class="label-style" style="margin-bottom: 10px;">ĐỒNG BỘ MÁY (BACKUP)</span>
-                <div class="grid-2">
-                    <button class="btn btn-backup" onclick="exportData()">📤 XUẤT FILE</button>
-                    <button class="btn btn-restore" onclick="document.getElementById('importFile').click()">📥 NHẬP FILE</button>
-                </div>
-                <input type="file" id="importFile" style="display:none;" accept=".json" onchange="importData(event)">
-            </div>
+            <div class="card" style="margin-top: 15px; padding: 15px; text-align: center;"><span class="label-style" style="margin-bottom: 10px;">ĐỒNG BỘ MÁY (BACKUP)</span><div class="grid-2"><button class="btn btn-backup" onclick="exportData()">📤 XUẤT FILE</button><button class="btn btn-restore" onclick="document.getElementById('importFile').click()">📥 NHẬP FILE</button></div><input type="file" id="importFile" style="display:none;" accept=".json" onchange="importData(event)"></div>
         </div>
     </div>
-
-    <div id="rewardModal" class="modal-overlay">
-        <div class="modal-box">
-            <div class="modal-icon-top" id="rewardIcon">🥳 🎉 💸</div>
-            <div class="modal-title" id="rewardTitle">CON VỢ LẠI CÓ</div>
-            <div class="modal-message" id="rewardAmount">¥0</div>
-            <button class="btn-claim" id="claimBtn" onclick="claimReward()">CLAIM 🎁</button>
-        </div>
-    </div>
+    <div id="rewardModal" class="modal-overlay"><div class="modal-box"><div class="modal-icon-top" id="rewardIcon">🥳 🎉 💸</div><div class="modal-title" id="rewardTitle">CON VỢ LẠI CÓ</div><div class="modal-message" id="rewardAmount">¥0</div><button class="btn-claim" id="claimBtn" onclick="claimReward()">CLAIM 🎁</button></div></div>
 
     <script>
-        let workData = [];
-        try {
-            workData = JSON.parse(localStorage.getItem('ocd_final_pro_v5')) || [];
-        } catch (error) {
-            workData = [];
+        let workData = JSON.parse(localStorage.getItem('ocd_final_pro_v5')) || [];
+        let editingDate = null, pendingEntry = null, lastTotalSum = 0;
+
+        // Âm thanh MP3 chuẩn để "phá khóa" Macbook
+        const soundClaim = new Audio('https://www.myinstants.com/media/sounds/ka-ching.mp3');
+        const soundCount = new Audio('https://www.myinstants.com/media/sounds/click_1.mp3');
+        soundCount.loop = true; soundCount.playbackRate = 3; soundCount.volume = 0.3;
+
+        // Bùa chú mở khóa âm thanh cho Macbook/iOS
+        function unlockAudio() {
+            soundClaim.play().then(() => { soundClaim.pause(); soundClaim.currentTime = 0; });
+            soundCount.play().then(() => { soundCount.pause(); soundCount.currentTime = 0; });
+            document.removeEventListener('click', unlockAudio);
         }
-        
-        let editingDate = null;
-        let pendingEntry = null;
-        let lastTotalSum = 0;
-
-        // --- CẬP NHẬT HỆ THỐNG ÂM THANH CHUẨN MP3 CHO iOS ---
-        // Đổi link sang đuôi .mp3 để iPhone nào cũng đọc được
-        const soundClaim = new Audio('https://raw.githubusercontent.com/iondrimba/images/master/cash-register-kaching.mp3');
-        const soundCount = new Audio('https://raw.githubusercontent.com/iondrimba/images/master/click.mp3');
-        
-        soundCount.loop = true; 
-        soundCount.playbackRate = 2.0; // Tăng tốc độ click cho giống máy đếm tiền
-        soundCount.volume = 0.5;
-
-        // BẢO BỐI UNLOCK ÂM THANH TRÊN iOS: 
-        // Khi người dùng chạm nhẹ vào màn hình lần đầu tiên, âm thanh sẽ được "mở khóa" âm thầm
-        document.body.addEventListener('touchstart', function() {
-            if(soundClaim.readyState === 0) {
-                soundClaim.load();
-                soundCount.load();
-            }
-        }, { once: true });
-
+        document.addEventListener('click', unlockAudio);
 
         document.getElementById('workDate').addEventListener('change', (e) => {
-            const selectedDateStr = e.target.value;
-            const existingItem = workData.find(i => i.date === selectedDateStr);
-            if (existingItem) editEntry(selectedDateStr); 
-            else resetForm(true); 
-            renderAll(); 
+            const val = e.target.value;
+            const item = workData.find(i => i.date === val);
+            if (item) editEntry(val); else resetForm(true);
+            renderAll();
         });
 
         function autoSelectFactoryByDate(dateStr) {
             if (!dateStr) return;
-            const d = new Date(dateStr);
-            const dayOfWeek = d.getDay(); 
-            if (dayOfWeek === 2 || dayOfWeek === 4) document.getElementById('factorySelect').value = 'thit';
-            else document.getElementById('factorySelect').value = 'kimchi';
+            const day = new Date(dateStr).getDay();
+            document.getElementById('factorySelect').value = (day === 2 || day === 4) ? 'thit' : 'kimchi';
             applyFactory();
         }
 
         function setToday() {
-            const today = new Date();
-            const yyyy = today.getFullYear();
-            const mm = String(today.getMonth() + 1).padStart(2, '0');
-            const dd = String(today.getDate()).padStart(2, '0');
-            document.getElementById('workDate').value = `${yyyy}-${mm}-${dd}`;
+            const d = new Date();
+            document.getElementById('workDate').value = `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
         }
 
         function applyFactory() {
-            const factory = document.getElementById('factorySelect').value;
-            const rateInput = document.getElementById('hourlyRate');
-            const transInput = document.getElementById('transFee');
-            if (factory === 'kimchi') { rateInput.value = 1177; transInput.value = 0; } 
-            else if (factory === 'thit') { rateInput.value = 1300; transInput.value = 940; }
+            const f = document.getElementById('factorySelect').value;
+            document.getElementById('hourlyRate').value = (f === 'kimchi') ? 1177 : 1300;
+            document.getElementById('transFee').value = (f === 'kimchi') ? 0 : 940;
         }
 
         function animateValue(obj, start, end, duration) {
             let startTimestamp = null;
-            
-            // Bật tiếng đếm tiền
-            soundCount.currentTime = 0;
-            let playPromise = soundCount.play();
-            if (playPromise !== undefined) {
-                playPromise.catch(error => { /* Bỏ qua lỗi nếu bị chặn */ });
-            }
-
+            soundCount.play().catch(() => {});
             const step = (timestamp) => {
                 if (!startTimestamp) startTimestamp = timestamp;
                 const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-                const easeOutProgress = 1 - Math.pow(1 - progress, 3);
-                
-                const currentVal = Math.floor(easeOutProgress * (end - start) + start);
+                const currentVal = Math.floor((1 - Math.pow(1 - progress, 3)) * (end - start) + start);
                 obj.innerText = `¥${currentVal.toLocaleString()}`;
-                
-                if (progress < 1) {
-                    window.requestAnimationFrame(step);
-                } else {
-                    obj.innerText = `¥${end.toLocaleString()}`;
-                    soundCount.pause(); // Tắt tiếng khi nhảy số xong
-                }
+                if (progress < 1) window.requestAnimationFrame(step);
+                else { obj.innerText = `¥${end.toLocaleString()}`; soundCount.pause(); }
             };
             window.requestAnimationFrame(step);
         }
 
-        function closeModalOnly() {
-            document.getElementById('rewardModal').classList.remove('active');
-            pendingEntry = null;
-        }
+        function closeModalOnly() { document.getElementById('rewardModal').classList.remove('active'); pendingEntry = null; }
 
         function saveData() {
             const date = document.getElementById('workDate').value;
-            const start = document.getElementById('startTime').value;
-            const end = document.getElementById('endTime').value;
-            const breakM = parseInt(document.getElementById('breakTime').value) || 0;
+            const start = document.getElementById('startTime').value, end = document.getElementById('endTime').value;
+            const bMin = parseInt(document.getElementById('breakTime').value) || 0;
             const rate = parseInt(document.getElementById('hourlyRate').value) || 0;
             const trans = parseInt(document.getElementById('transFee').value) || 0;
             const factory = document.getElementById('factorySelect').value;
-
-            if(!date) return alert("Vui lòng chọn ngày!");
-
-            const [h1, m1] = start.split(':').map(Number);
-            const [h2, m2] = end.split(':').map(Number);
-            const diffMin = (h2 * 60 + m2) - (h1 * 60 + m1) - breakM;
-
-            if (diffMin <= 0) return alert("Giờ làm không hợp lệ (nhỏ hơn 0)!");
-
+            const diffMin = (parseInt(end.split(':')[0])*60 + parseInt(end.split(':')[1])) - (parseInt(start.split(':')[0])*60 + parseInt(start.split(':')[1])) - bMin;
+            if (diffMin <= 0) return alert("Giờ làm không hợp lệ!");
             const hours = diffMin / 60;
             const money = Math.floor((Math.min(8, hours) * rate) + (Math.max(0, hours - 8) * rate * 1.25) + trans);
-
             const now = new Date();
             const todayStr = `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}-${String(now.getDate()).padStart(2,'0')}`;
+            const iconEl = document.getElementById('rewardIcon'), titleEl = document.getElementById('rewardTitle'), amountEl = document.getElementById('rewardAmount'), btnEl = document.getElementById('claimBtn'), modalEl = document.getElementById('rewardModal');
             
-            const iconEl = document.getElementById('rewardIcon');
-            const titleEl = document.getElementById('rewardTitle');
-            const amountEl = document.getElementById('rewardAmount');
-            const btnEl = document.getElementById('claimBtn');
-            const modalEl = document.getElementById('rewardModal');
-
-            amountEl.style.fontSize = "1.8rem";
-
-            // 1. NGÀY TƯƠNG LAI
             if (date > todayStr) {
-                iconEl.innerText = "💩 🛑 🙅‍♂️";
-                titleEl.innerText = "KHÔNG LÀM MÀ ĐÒI CÓ ĂN";
-                amountEl.innerText = "THÌ CHỈ CÓ ĂN...";
-                amountEl.style.fontSize = "1.5rem"; 
-                btnEl.innerText = "BIẾT RỒI 🥲";
-                btnEl.style.background = "#8E8E93"; 
-                btnEl.style.boxShadow = "none";
-                btnEl.onclick = closeModalOnly; 
-                modalEl.classList.add('active');
-                return; 
+                iconEl.innerText = "💩 🛑"; titleEl.innerText = "KHÔNG LÀM MÀ ĐÒI CÓ ĂN"; amountEl.innerText = "THÌ CHỈ CÓ ĂN..."; btnEl.innerText = "BIẾT RỒI 🥲"; btnEl.onclick = closeModalOnly; modalEl.classList.add('active'); return;
             }
-
-            // 2. HÔM NAY NHƯNG TRƯỚC 17H
             if (date === todayStr && now.getHours() < 17) {
-                let target = new Date(); target.setHours(17, 0, 0, 0);
-                let diff = target - now;
-                let h = Math.floor(diff / (1000 * 60 * 60));
-                let m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-                
-                iconEl.innerText = "🥵 💦 ⏳";
-                titleEl.innerText = "YAMATE KUDASAI SẮP RA RỒI";
-                amountEl.innerText = `Còn ${h}h ${m}p nữa...`;
-                amountEl.style.fontSize = "1.5rem";
-                btnEl.innerText = "RÁNG LÀM TIẾP THÔI 😭";
-                btnEl.style.background = "#FF3B30"; 
-                btnEl.style.boxShadow = "0 8px 20px rgba(255, 59, 48, 0.3)";
-                btnEl.onclick = closeModalOnly;
-                modalEl.classList.add('active');
-                return; 
+                let diff = (new Date().setHours(17,0,0,0)) - now;
+                iconEl.innerText = "🥵 ⏳"; titleEl.innerText = "YAMATE KUDASAI SẮP RA RỒI"; amountEl.innerText = `Còn ${Math.floor(diff/3600000)}h ${Math.floor((diff%3600000)/60000)}p nữa...`; btnEl.innerText = "RÁNG LÀM TIẾP 😭"; btnEl.onclick = closeModalOnly; modalEl.classList.add('active'); return;
             }
 
-            pendingEntry = { date, start, end, breakM, rate, trans, factory, hours: hours.toFixed(1), money };
-            
-            const monthStr = date.substring(0, 7); 
-            const dayStr = date.split('-')[2];     
-            
-            let tempWorkData = workData.filter(i => i.date !== date);
-            tempWorkData.push(pendingEntry);
-            
-            let ax = 0; let bx = 0; 
-            tempWorkData.forEach(item => {
-                if (item.date.startsWith(monthStr)) {
-                    if (item.factory === 'kimchi') ax += item.money;
-                    if (item.factory === 'thit') bx += item.money;
+            pendingEntry = { date, start, end, breakM: bMin, rate, trans, factory, hours: hours.toFixed(1), money };
+            let ax = 0, bx = 0;
+            [...workData.filter(i => i.date !== date), pendingEntry].forEach(i => {
+                if (i.date.startsWith(date.substring(0,7))) {
+                    if (i.factory === 'kimchi') ax += i.money; if (i.factory === 'thit') bx += i.money;
                 }
             });
 
-            let finalTitle = ""; let finalIcon = "";
-
-            if (dayStr === '25') {
-                finalTitle = `LƯƠNG CỦA CỤ (¥${ax.toLocaleString()})`;
-                finalIcon = "🥬 💸 👑";
-            } else if (dayStr === '15') {
-                finalTitle = `CHO CHỒNG HẾT (¥${bx.toLocaleString()})`;
-                finalIcon = "🥩 💝 😘";
-            } else if (date < todayStr) {
-                finalTitle = "LẠI QUÊN À NHỢN";
-                finalIcon = "🐷 🐽 🧠";
-            } else {
-                const randomPool = [
-                    { title: "HẸ HẸ LẠI CÓ XIỀN", icon: "🤑 💰 💸" },
-                    { title: "TIỀN CỦA BỐ", icon: "😎 💵 👑" },
-                    { title: "CHO CHỒNG IU HẾT", icon: "🥰 😘 💖" },
-                    { title: "CON VỢ LẠI CÓ", icon: "🥳 🎉 💸" }
-                ];
-                const rand = randomPool[Math.floor(Math.random() * randomPool.length)];
-                finalTitle = rand.title; finalIcon = rand.icon;
+            const day = date.split('-')[2];
+            if (day === '25') { iconEl.innerText = "🥬 💸"; titleEl.innerText = `LƯƠNG CỦA CỤ (¥${ax.toLocaleString()})`; }
+            else if (day === '15') { iconEl.innerText = "🥩 💝"; titleEl.innerText = `CHO CHỒNG HẾT (¥${bx.toLocaleString()})`; }
+            else if (date < todayStr) { iconEl.innerText = "🐷 🧠"; titleEl.innerText = "LẠI QUÊN À NHỢN"; }
+            else { 
+                const p = [{t:"HẸ HẸ LẠI CÓ XIỀN", i:"🤑 💰"}, {t:"TIỀN CỦA BỐ", i:"😎 💵"}, {t:"CHO CHỒNG IU HẾT", i:"🥰 😘"}];
+                const r = p[Math.floor(Math.random()*p.length)]; iconEl.innerText = r.i; titleEl.innerText = r.t;
             }
-
-            iconEl.innerText = finalIcon;
-            titleEl.innerText = finalTitle;
-            amountEl.innerText = `¥${money.toLocaleString()}`; 
-            
-            btnEl.innerText = "CLAIM 🎁";
-            btnEl.style.background = "linear-gradient(135deg, #34C759 0%, #28A745 100%)";
-            btnEl.style.boxShadow = "0 8px 20px rgba(52, 199, 89, 0.3)";
-            btnEl.onclick = claimReward; 
-
-            modalEl.classList.add('active');
+            amountEl.innerText = `¥${money.toLocaleString()}`; btnEl.innerText = "CLAIM 🎁"; btnEl.onclick = claimReward; modalEl.classList.add('active');
         }
 
         function claimReward() {
             if (!pendingEntry) return;
-
-            // BẬT TIẾNG KA-CHING
-            soundClaim.currentTime = 0;
-            let playPromise = soundClaim.play();
-            if (playPromise !== undefined) {
-                playPromise.catch(error => { /* Bỏ qua lỗi */ });
-            }
-
+            soundClaim.play().catch(() => {});
             const idx = workData.findIndex(i => i.date === pendingEntry.date);
-            if(idx > -1) workData[idx] = pendingEntry; 
-            else workData.push(pendingEntry);
-
+            if(idx > -1) workData[idx] = pendingEntry; else workData.push(pendingEntry);
             workData.sort((a,b) => new Date(b.date) - new Date(a.date));
-            
-            try {
-                localStorage.setItem('ocd_final_pro_v5', JSON.stringify(workData));
-                document.getElementById('rewardModal').classList.remove('active');
-                pendingEntry = null;
-                resetForm(); 
-                renderAll(); 
-            } catch (e) {}
+            localStorage.setItem('ocd_final_pro_v5', JSON.stringify(workData));
+            document.getElementById('rewardModal').classList.remove('active');
+            pendingEntry = null; resetForm(); renderAll();
         }
 
-        function editEntry(dateStr) {
-            const item = workData.find(i => i.date === dateStr);
-            if(!item) return;
-            document.getElementById('workDate').value = item.date;
-            document.getElementById('startTime').value = item.start;
-            document.getElementById('endTime').value = item.end;
-            document.getElementById('breakTime').value = item.breakM;
-            document.getElementById('hourlyRate').value = item.rate;
-            document.getElementById('transFee').value = item.trans;
-
-            if(item.factory) document.getElementById('factorySelect').value = item.factory;
-            else document.getElementById('factorySelect').value = 'custom';
-
-            editingDate = item.date;
-            const btnSave = document.getElementById('btnSave');
-            btnSave.innerText = "CẬP NHẬT THAY ĐỔI";
-            btnSave.className = "btn btn-update"; 
-            document.getElementById('editActions').style.display = "flex";
-            renderAll(); 
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+        function editEntry(d) {
+            const i = workData.find(x => x.date === d);
+            if(!i) return;
+            document.getElementById('workDate').value = i.date;
+            document.getElementById('startTime').value = i.start; document.getElementById('endTime').value = i.end;
+            document.getElementById('breakTime').value = i.breakM; document.getElementById('hourlyRate').value = i.rate;
+            document.getElementById('transFee').value = i.trans; document.getElementById('factorySelect').value = i.factory || 'custom';
+            editingDate = i.date; document.getElementById('btnSave').innerText = "CẬP NHẬT THAY ĐỔI";
+            document.getElementById('editActions').style.display = "flex"; renderAll(); window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         function deleteData() {
-            const date = document.getElementById('workDate').value;
-            if(confirm(`Bạn có chắc chắn muốn xóa dữ liệu ngày ${date.split('-').reverse().join('/')}?`)) {
-                workData = workData.filter(i => i.date !== date);
-                try { localStorage.setItem('ocd_final_pro_v5', JSON.stringify(workData)); } catch(e){}
-                resetForm();
-                renderAll();
+            if(confirm("Xóa dữ liệu ngày này?")) {
+                workData = workData.filter(i => i.date !== document.getElementById('workDate').value);
+                localStorage.setItem('ocd_final_pro_v5', JSON.stringify(workData));
+                resetForm(); renderAll();
             }
         }
 
-        function resetForm(keepDate = false) {
-            editingDate = null;
-            if(!keepDate) setToday();
-            
-            const currentDateStr = document.getElementById('workDate').value;
-            autoSelectFactoryByDate(currentDateStr);
-            
-            const btnSave = document.getElementById('btnSave');
-            btnSave.innerText = "LƯU DỮ LIỆU";
-            btnSave.className = "btn btn-save"; 
-            document.getElementById('editActions').style.display = "none";
+        function resetForm(k = false) {
+            editingDate = null; if(!k) setToday();
+            autoSelectFactoryByDate(document.getElementById('workDate').value);
+            document.getElementById('btnSave').innerText = "LƯU DỮ LIỆU"; document.getElementById('editActions').style.display = "none";
         }
 
-        function switchView(view) {
-            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-            document.querySelectorAll('.view-section').forEach(v => v.classList.remove('active'));
-            document.getElementById(view + 'View').classList.add('active');
-            if(view === 'cal') document.getElementById('tabCal').classList.add('active');
-            else document.getElementById('tabList').classList.add('active');
+        function switchView(v) {
+            document.querySelectorAll('.tab, .view-section').forEach(x => x.classList.remove('active'));
+            document.getElementById(v+'View').classList.add('active');
+            document.getElementById(v === 'cal' ? 'tabCal' : 'tabList').classList.add('active');
         }
 
         function exportData() {
-            if(workData.length === 0) return alert("Chưa có dữ liệu để xuất!");
-            const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(workData));
-            const downloadAnchorNode = document.createElement('a');
-            downloadAnchorNode.setAttribute("href", dataStr);
-            downloadAnchorNode.setAttribute("download", "cham_cong_backup.json");
-            document.body.appendChild(downloadAnchorNode);
-            downloadAnchorNode.click();
-            downloadAnchorNode.remove();
+            const blob = new Blob([JSON.stringify(workData)], {type: 'application/json'});
+            const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'cham_cong.json'; a.click();
         }
 
-        function importData(event) {
-            const file = event.target.files[0];
-            if (!file) return;
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                try {
-                    const importedData = JSON.parse(e.target.result);
-                    if (Array.isArray(importedData)) {
-                        workData = importedData;
-                        localStorage.setItem('ocd_final_pro_v5', JSON.stringify(workData));
-                        renderAll();
-                        alert("Đã khôi phục dữ liệu thành công!");
-                    }
-                } catch (err) {}
-                event.target.value = ''; 
-            };
-            reader.readAsText(file);
+        function importData(e) {
+            const f = e.target.files[0]; if(!f) return;
+            const r = new FileReader(); r.onload = (x) => {
+                workData = JSON.parse(x.target.result); localStorage.setItem('ocd_final_pro_v5', JSON.stringify(workData)); renderAll();
+            }; r.readAsText(f);
         }
 
         function renderAll() {
-            let totalSum = 0;
-            workData.forEach(item => totalSum += item.money);
-            
-            const totalEl = document.getElementById('totalVal');
-            if (totalSum !== lastTotalSum) {
-                animateValue(totalEl, lastTotalSum, totalSum, 1500); 
-                lastTotalSum = totalSum; 
-            } else {
-                totalEl.innerText = `¥${totalSum.toLocaleString()}`;
-            }
-
-            const grid = document.getElementById('grid');
-            grid.innerHTML = '';
-            ['T2','T3','T4','T5','T6','T7','CN'].forEach(d => {
-                grid.innerHTML += `<div class="day-name">${d}</div>`;
-            });
-
-            const now = new Date();
-            document.getElementById('monthLabel').innerText = `THÁNG ${now.getMonth() + 1} / ${now.getFullYear()}`;
-            
-            const first = new Date(now.getFullYear(), now.getMonth(), 1);
-            const last = new Date(now.getFullYear(), now.getMonth() + 1, 0);
+            let total = 0; workData.forEach(i => total += i.money);
+            const el = document.getElementById('totalVal');
+            if (total !== lastTotalSum) { animateValue(el, lastTotalSum, total, 1000); lastTotalSum = total; }
+            else el.innerText = `¥${total.toLocaleString()}`;
+            const grid = document.getElementById('grid'); grid.innerHTML = '';
+            ['T2','T3','T4','T5','T6','T7','CN'].forEach(d => grid.innerHTML += `<div class="day-name">${d}</div>`);
+            const now = new Date(), first = new Date(now.getFullYear(), now.getMonth(), 1), last = new Date(now.getFullYear(), now.getMonth()+1, 0);
+            document.getElementById('monthLabel').innerText = `THÁNG ${now.getMonth()+1} / ${now.getFullYear()}`;
             let pad = first.getDay() === 0 ? 6 : first.getDay() - 1;
-
             for(let i=0; i<pad; i++) grid.appendChild(document.createElement('div'));
-
-            const todayStr = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
-            const selectedDateStr = document.getElementById('workDate').value;
-
             for(let d=1; d<=last.getDate(); d++) {
                 const dStr = `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
-                const item = workData.find(i => i.date === dStr);
-                
-                const isToday = (todayStr === dStr);
-                const isSelected = (selectedDateStr === dStr);
-                
-                let icon = '';
-                if(item) {
-                    if(item.factory === 'kimchi') icon = '🥬';
-                    else if(item.factory === 'thit') icon = '🥩';
-                    else icon = '📝';
-                }
-
+                const i = workData.find(x => x.date === dStr);
                 const cell = document.createElement('div');
-                cell.className = `cell ${item ? 'has-data' : ''} ${isToday ? 'today' : ''} ${isSelected ? 'selected' : ''}`;
-                
-                if(item) {
-                    cell.innerHTML = `
-                        <div class="cell-top">
-                            <span class="cell-date">${d}</span>
-                            <span class="cell-icon">${icon}</span>
-                        </div>
-                        <div class="cell-money">¥${item.money.toLocaleString()}</div>
-                    `;
-                } else {
-                    cell.innerHTML = `<div class="cell-date">${d}</div>`;
-                }
-                
-                cell.onclick = () => {
-                    if(item) {
-                        editEntry(dStr); 
-                    } else {
-                        document.getElementById('workDate').value = dStr;
-                        resetForm(true); 
-                        renderAll();
-                        window.scrollTo({ top: 0, behavior: 'smooth' }); 
-                    }
-                };
+                cell.className = `cell ${i?'has-data':''} ${dStr===(new Date().toISOString().split('T')[0])?'today':''} ${dStr===document.getElementById('workDate').value?'selected':''}`;
+                cell.innerHTML = i ? `<div class="cell-top"><span>${d}</span><span>${i.factory==='kimchi'?'🥬':'🥩'}</span></div><div class="cell-money">¥${i.money.toLocaleString()}</div>` : `<span>${d}</span>`;
+                cell.onclick = () => { if(i) editEntry(dStr); else { document.getElementById('workDate').value = dStr; resetForm(true); renderAll(); window.scrollTo({top:0, behavior:'smooth'}); } };
                 grid.appendChild(cell);
             }
-
-            const listBody = document.getElementById('listBody');
-            listBody.innerHTML = workData.map(item => {
-                let icon = '📝';
-                if(item.factory === 'kimchi') icon = '🥬';
-                if(item.factory === 'thit') icon = '🥩';
-                const shortDate = item.date.split('-').reverse().slice(0,2).join('/');
-                return `
-                <tr>
-                    <td><span style="font-size: 1.1rem; margin-right: 4px;">${icon}</span>${shortDate}</td>
-                    <td>${item.hours}h</td>
-                    <td class="td-money">¥${item.money.toLocaleString()}</td>
-                    <td><button class="btn-edit-small" onclick="editEntry('${item.date}')">Sửa</button></td>
-                </tr>
-            `}).join('');
+            document.getElementById('listBody').innerHTML = workData.map(i => `<tr><td>${i.factory==='kimchi'?'🥬':'🥩'} ${i.date.split('-').reverse().slice(0,2).join('/')}</td><td>${i.hours}h</td><td class="td-money">¥${i.money.toLocaleString()}</td><td><button class="btn-edit-small" onclick="editEntry('${i.date}')">Sửa</button></td></tr>`).join('');
         }
 
-        setToday();
-        autoSelectFactoryByDate(document.getElementById('workDate').value);
-        
-        let initialSum = 0;
-        workData.forEach(item => initialSum += item.money);
-        lastTotalSum = initialSum;
-        document.getElementById('totalVal').innerText = `¥${initialSum.toLocaleString()}`;
-        
-        renderAll();
+        setToday(); resetForm(); renderAll();
     </script>
 </body>
 </html>
